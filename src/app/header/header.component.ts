@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   title: string = 'Angular9 Kitchen';
-  lead: string = 'Organise your shopping lists and recipes';
+  lead: string = 'Organise your shopping list and recipes';
 
   constructor() { }
 
