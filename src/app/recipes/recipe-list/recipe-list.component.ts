@@ -11,7 +11,7 @@ export class RecipeListComponent implements OnInit {
   recipes: Recipe[] = [
     {
       name: 'Aamras',
-      description: 'Aamras (or amras) is a sweet dish featuring in the cuisine of the Indian subcontinent and made from the pulp of the mango fruit. The pulp of a ripe mango is extracted, usually by hand, and is consumed together with pooris or chapati(Indian breads). Sometimes ghee and milk are added to the pulp to enhance its flavour. Sugar is also added to adjust the sweetness.It is often had at celebrations and weddings with cardamon and chopped fruits.',
+      description: 'Aamras (or amras) is a sweet dish featuring in the cuisine of the Indian subcontinent and made from the pulp of the mango fruit. The pulp of a ripe mango is extracted, usually by hand, and is consumed together with pooris or chapati(Indian breads).',
       imagePath: 'https://upload.wikimedia.org/wikipedia/commons/6/67/Aamras_Custard.JPG',
     },
     {

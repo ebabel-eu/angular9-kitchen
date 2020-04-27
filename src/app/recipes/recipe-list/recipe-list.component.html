@@ -1,13 +1,19 @@
-<div class="form-group">
-  <button type="button" class="btn btn-primary">New Recipe</button>
+<div class="form-group mb-4">
+  <button type="button" class="btn btn-light">New Recipe</button>
 </div>
 
-<div class="card form-group" *ngFor="let recipe of recipes">
-  <img [src]="recipe.imagePath" [alt]="recipe.name" class="card-img-top">
-  <div class="card-body">
-    <h2 class="card-title">{{recipe.name}}</h2>
-    <p class="card-text">{{recipe.description}}</p>
-    <button type="button" class="btn btn-primary">{{recipe.name}} recipe</button>
+<div class="card mb-4 form-group" *ngFor="let recipe of recipes">
+  <div class="row no-gutters">
+    <div class="col-md-4">
+      <img [src]="recipe.imagePath" alt="{{recipe.name}} photo" class="card-img">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h2 class="card-title">{{recipe.name}}</h2>
+        <p class="card-text">{{recipe.description}}</p>
+        <button type="button" class="btn btn-primary">{{recipe.name}} recipe</button>
+      </div>
+    </div>
   </div>
 </div>
 
