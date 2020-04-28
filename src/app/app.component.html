@@ -1,6 +1,5 @@
 <div class="container">
-  <app-header [currentPage]="currentPage"></app-header>
-  <p>{{currentPage}}</p>
-  <app-shopping-list [currentPage]="currentPage" *ngIf="currentPage === 'shopping-list'"></app-shopping-list>
-  <app-recipes [currentPage]="currentPage" *ngIf="currentPage === 'recipes'"></app-recipes>  
+  <app-header (pageUpdated)="togglePage($event)"></app-header>
+  <app-shopping-list *ngIf="navigateToPage === 'shopping-list'"></app-shopping-list>
+  <app-recipes *ngIf="navigateToPage === 'recipes'"></app-recipes>  
 </div>

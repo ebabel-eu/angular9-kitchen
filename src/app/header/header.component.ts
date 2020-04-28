@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -8,10 +8,16 @@ import { Component, OnInit, Input } from '@angular/core';
 export class HeaderComponent implements OnInit {
   title: string = 'Angular9 Kitchen';
   collapsed: boolean = true;
-  @Input() currentPage: string;
+  currentPage: string = 'shopping-list';
+  @Output() pageUpdated = new EventEmitter<string>();
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onUpdatePage(page: string): void {
+    this.currentPage = page;
+    this.pageUpdated.emit(page);
   }
 }

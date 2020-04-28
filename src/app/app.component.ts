@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  currentPage: string = 'shopping-list';
+  navigateToPage: string = 'shopping-list';
+
+  togglePage(page: string) {
+    this.navigateToPage = page;
+  } 
 }
