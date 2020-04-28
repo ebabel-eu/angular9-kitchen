@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 import { Ingredient } from '../shared/ingredient.interface';
 
@@ -8,6 +8,8 @@ import { Ingredient } from '../shared/ingredient.interface';
   styleUrls: ['./shopping-list.component.css']
 })
 export class ShoppingListComponent implements OnInit {
+  @Input() currentPage: string;
+
   ingredients: Ingredient[] = [
     {
       name: 'kesar mangoes',

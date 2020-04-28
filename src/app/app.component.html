@@ -1,5 +1,6 @@
 <div class="container">
-  <app-header></app-header>
-  <app-shopping-list></app-shopping-list>
-  <app-recipes></app-recipes>  
+  <app-header [currentPage]="currentPage"></app-header>
+  <p>{{currentPage}}</p>
+  <app-shopping-list [currentPage]="currentPage" *ngIf="currentPage === 'shopping-list'"></app-shopping-list>
+  <app-recipes [currentPage]="currentPage" *ngIf="currentPage === 'recipes'"></app-recipes>  
 </div>
