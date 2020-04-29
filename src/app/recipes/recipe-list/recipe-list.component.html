@@ -2,20 +2,7 @@
   <button type="button" class="btn btn-light">New Recipe</button>
 </div>
 
-<div class="card mb-4 form-group" *ngFor="let recipe of recipes">
-  <div class="row no-gutters">
-    <div class="col">
-      <img [src]="recipe.imagePath" alt="{{recipe.name}} photo" class="card-img-top">
-      <div class="card-body">
-        <h2 class="card-title">{{recipe.name}}</h2>
-        <p class="card-text">{{recipe.description}}</p>
-        <button type="button" class="btn btn-primary">{{recipe.name}} recipe</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<app-recipe-item *ngFor="let recipe of recipes"></app-recipe-item>
-
-
+<app-recipe-item
+*ngFor="let recipe of recipes"
+[recipe]="recipe"
+></app-recipe-item>
