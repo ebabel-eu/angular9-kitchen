@@ -1,14 +1,23 @@
-<div class="form-group mb-4">
-  <button type="button" class="btn btn-success mr-2">Add to Shopping</button>
-  <button type="button" class="btn btn-light">Edit Recipe</button>
-  <button type="button" class="btn btn-danger float-right">Delete</button>
+<div *ngIf="!selectedRecipe">
+  <p>Select a recipe to see its ingredients or create a new recipe.</p>
 </div>
 
-<h2>Selected Recipe name</h2>
-<p>description</p>
-<img src="" alt="photo">
+<div *ngIf="selectedRecipe">
+  <div class="form-group mb-4">
+    <button type="button" class="btn btn-success mr-2">Add to Shopping</button>
+    <button type="button" class="btn btn-light">Edit Recipe</button>
+    <button type="button" class="btn btn-danger float-right">Delete</button>
+  </div>
 
-<h3>Ingredients</h3>
-<ul>
-  <li>ingredient 1</li>
-</ul>
+  <h2>{{selectedRecipe.name}}</h2>
+  <p class="mb-4">{{selectedRecipe.description}}</p>
+
+  <h3>Ingredients</h3>
+  <ul class="mb-4">
+    <li>ingredient 1</li>
+    <li>ingredient 2</li>
+    <li>ingredient 3...</li>
+  </ul>
+
+  <img [src]="selectedRecipe.imagePath" alt="{{selectedRecipe.name}} photo" class="img-fluid mb-4">
+</div>
