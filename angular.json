@@ -63,6 +63,7 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
+            "port": 8080,
             "browserTarget": "angular9-kitchen:build"
           },
           "configurations": {
@@ -120,6 +121,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "angular9-kitchen"
+    }
+  },
+  "defaultProject": "angular9-kitchen",
+  "cli": {
+    "analytics": "5453b3bd-25c0-4190-a0d9-58515cddd2cd"
+  }
 }
