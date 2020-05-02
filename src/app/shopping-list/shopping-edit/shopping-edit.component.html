@@ -2,16 +2,16 @@
   <div class="row mb-2">
     <div class="col-md-4">
       <label>Amount</label>
-      <input #amountInput type="number" class="form-control">
+      <input #amountInput type="number" class="form-control" required>
     </div>
     <div class="col-md-8">
       <label>Ingredient name</label>
-      <input #nameInput type="text" class="form-control">
+      <input #nameInput type="text" class="form-control" required>
     </div>
   </div>
   <div class="row">
     <div class="col">
-      <button (click)="addIngredient(amountInput, nameInput)" type="button" class="btn btn-success mr-2">Add</button>
+      <button (click)="addIngredient()" type="button" class="btn btn-success mr-2">Add</button>
       <button type="reset" class="btn btn-light">Reset</button>
       <button type="button" class="btn btn-danger float-right">Delete</button>
     </div>
