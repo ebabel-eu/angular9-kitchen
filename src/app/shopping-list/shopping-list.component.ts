@@ -39,7 +39,7 @@ export class ShoppingListComponent implements OnInit {
   }
 
   addIngredient(ingredient: Ingredient): void {
-    this.ingredients.push(ingredient);
+    this.ingredients.unshift(ingredient);
   }
 
 }
