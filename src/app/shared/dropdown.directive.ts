@@ -4,15 +4,20 @@ import { Directive, ElementRef, Renderer2, OnInit, HostListener } from '@angular
   selector: '[appDropdown]'
 })
 export class DropdownDirective implements OnInit {
+  parentNode: HTMLElement;
+  siblingNode: HTMLElement;
+
   constructor(private elementRef: ElementRef, private renderer: Renderer2) {
-    // this.renderer.addClass(this.elementRef.nativeElement, 'show');
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.parentNode = this.renderer.parentNode(this.elementRef.nativeElement);
+    this.siblingNode = this.renderer.nextSibling(this.elementRef.nativeElement);
+  }
 
   @HostListener('click', ['$event']) click(e: Event) {
     e.preventDefault();
-    this.elementRef.nativeElement.parentNode.className = (this.elementRef.nativeElement.parentNode.className === 'dropdown') ? 'dropdown show' : 'dropdown';
-    this.elementRef.nativeElement.nextSibling.className = (this.elementRef.nativeElement.nextSibling.className === 'dropdown-menu') ? 'dropdown-menu show' : 'dropdown-menu';
+    this.parentNode.className = (this.parentNode.className === 'dropdown') ? 'dropdown show' : 'dropdown';
+    this.siblingNode.className = (this.siblingNode.className === 'dropdown-menu') ? 'dropdown-menu show' : 'dropdown-menu';
   }
 }
