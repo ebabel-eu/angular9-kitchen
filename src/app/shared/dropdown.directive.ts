@@ -20,4 +20,9 @@ export class DropdownDirective implements OnInit {
     this.parentNode.className = (this.parentNode.className === 'dropdown') ? 'dropdown show' : 'dropdown';
     this.siblingNode.className = (this.siblingNode.className === 'dropdown-menu') ? 'dropdown-menu show' : 'dropdown-menu';
   }
+
+  @HostListener('blur', ['$event']) blur(e: Event) {
+    this.parentNode.className = 'dropdown';
+    this.siblingNode.className = 'dropdown-menu';
+  }
 }
