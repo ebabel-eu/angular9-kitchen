@@ -4,6 +4,8 @@ import { Directive, ElementRef, Renderer2, OnInit, HostListener } from '@angular
   selector: '[appDropdown]'
 })
 export class DropdownDirective implements OnInit {
+  isOpen: boolean = false;
+
   parentNode: HTMLElement;
   siblingNode: HTMLElement;
 
@@ -13,15 +15,20 @@ export class DropdownDirective implements OnInit {
   ngOnInit() {
     this.parentNode = this.renderer.parentNode(this.elementRef.nativeElement);
     this.siblingNode = this.renderer.nextSibling(this.elementRef.nativeElement);
+
+    this.parentNode.className = 'dropdown';
+    this.siblingNode.className = 'dropdown-menu';
   }
 
   @HostListener('click', ['$event']) click(e: Event) {
     e.preventDefault();
-    this.parentNode.className = (this.parentNode.className === 'dropdown') ? 'dropdown show' : 'dropdown';
-    this.siblingNode.className = (this.siblingNode.className === 'dropdown-menu') ? 'dropdown-menu show' : 'dropdown-menu';
+    this.isOpen = !this.isOpen;
+    this.parentNode.className = this.isOpen ? 'dropdown show' : 'dropdown';
+    this.siblingNode.className = this.isOpen ? 'dropdown-menu show' : 'dropdown-menu';
   }
 
   @HostListener('blur', ['$event']) blur(e: Event) {
+    this.isOpen = false;
     this.parentNode.className = 'dropdown';
     this.siblingNode.className = 'dropdown-menu';
   }
