@@ -14,22 +14,12 @@ export class ShoppingListComponent implements OnInit {
     {
       name: 'kesar mangoes',
       amount: 4,
+      path: '#/kesar-mangoes',
     },
     {
       name: 'teaspoon cardamom powder',
       amount: 0.5,
-    },
-    {
-      name: 'pinch saffron strands',
-      amount: 1,
-    },
-    {
-      name: 'teaspoon dry ginger powder',
-      amount: 0.25,
-    },
-    {
-      name: 'jug of water or milk',
-      amount: 1,
+      path: '#/teaspoon-cardamom-powder',
     },
   ];
 

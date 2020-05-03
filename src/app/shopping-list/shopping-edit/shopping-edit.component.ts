@@ -20,7 +20,8 @@ export class ShoppingEditComponent implements OnInit {
   addIngredient(): void {
     const ingredient: Ingredient = {
       amount: this.amountInputRef.nativeElement.value,
-      name: this.nameInputRef.nativeElement.value
+      name: this.nameInputRef.nativeElement.value,
+      path: `#/${this.nameInputRef.nativeElement.value.replace(/ /g, '-')}`,
     };
 
     this.ingredientAdded.emit(ingredient);

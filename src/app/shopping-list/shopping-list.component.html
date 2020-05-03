@@ -2,7 +2,7 @@
   <div class="col md-6">
     <div class="list-group">
       <a
-        href="#" class="list-group-item"
+        [href]="ingredient.path" class="list-group-item"
         *ngFor="let ingredient of ingredients"
       >
         {{ingredient.amount}} {{ingredient.name}}
